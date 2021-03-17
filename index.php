@@ -107,3 +107,40 @@ function printTextExceptOnIterations(...$numbers) {
         echo "\n";
     }
 }
+
+// Step 5: Well......shoot. So we have a new client that pays a lot of money that wants to be able to specify any number
+// of multiples, and assign whatever text they want to that multiple, but we also need to leave functionality for the
+// other clients who want it just like they have it. For example, if the new client wants any multiples of 3 to be
+// "Fish" or 7 to be "Spam", we have to give them that option, while not blowing up existing functionality for the first
+// clients.
+
+printTextExceptOnIterations([3 => 'Fish', 7 => 'Spam', 20 => 'Milk?'], 58, 72);
+
+function printTextExceptOnIterations(array $numberNames, ...$numbers) {
+    //echo "numbers: " . print_r($numbers, true);
+    for ($i = 1; $i <= 120; $i++) {
+        if ($i % 2 == 0) {
+            $numbersOutput = '';
+            $textIteration = 0;
+            foreach ($numbers as $number) {
+                $textIteration++;
+                if ($i % $number == 0) {
+                    $numbersOutput = $i;
+                    break;
+                } else {
+                    // ... not sure I'm understanding all of the step's accumulated logic here ...
+                    $numberName = $numberNames[$i] ?? '';
+                    if ($numberName) {
+                        if ($numbersOutput != $numberName) {
+                            $numbersOutput = $numberName;
+                        }
+                    } else {
+                        $numbersOutput .= ($textIteration > 1 ? ' ' : '') . ("text $textIteration");
+                    }
+                }
+            }
+            echo $numbersOutput;
+        } else echo $i;
+        echo "\n";
+    }
+}
