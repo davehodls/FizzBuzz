@@ -61,3 +61,20 @@ function parseLineNumbers($num1, $num2) {
         echo "\n";
     }
 }
+
+// Step 3: Based on feedback from the clients, the product manager thinks it would be best to only show the word if it's
+// an even number. If a number and a multiple match and it's an odd number, you should still output just the number
+
+ChiCkenSteAk(5, 9);
+
+function ChiCkenSteAk($mult1, $mult2) {
+    for ($i = 1; $i <= 120; $i++) {
+        if ($i % 2 == 0) {
+            if ($i % $mult1 == 0 && $i % $mult2 == 0) echo 'ChiCken and SteAk';
+            else if ($i % $mult1 == 0) echo 'ChiCken';
+            else if ($i % $mult2 == 0) echo 'SteAk';
+            else echo $i;
+        } else echo $i;
+        echo "\n";
+    }
+}
