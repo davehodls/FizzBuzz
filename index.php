@@ -78,3 +78,32 @@ function ChiCkenSteAk($mult1, $mult2) {
         echo "\n";
     }
 }
+
+// Step 4:
+// After talking with a client, the product manager says the client needs to be able to assign as many supplied numbers
+// as they want that will not allow the text to be printed out. For instance, if the client specifies 52 and 78, then
+// even if 52 or 78 is a multiple of one of the given number multiples, it will still print out the number 52 or 78, not
+// the text that is supposed to be printed out.
+
+printTextExceptOnIterations(52, 78);
+
+function printTextExceptOnIterations(...$numbers) {
+    //echo "numbers: " . print_r($numbers, true);
+    for ($i = 1; $i <= 120; $i++) {
+        //echo "iteration $i % 2 = " . ($i % 2) . "\n";
+        if ($i % 2 == 0) {
+            $numbersOutput = '';
+            $textIteration = 0;
+            foreach ($numbers as $number) {
+                $textIteration++;
+                //echo "i $i % number $number = " . ($i % $number) . "\n";
+                if ($i % $number == 0) {
+                    $numbersOutput = $i;
+                    break;
+                } else $numbersOutput .= ($textIteration > 1 ? ' ' : '') . "text $textIteration";
+            }
+            echo $numbersOutput;
+        } else echo $i;
+        echo "\n";
+    }
+}
