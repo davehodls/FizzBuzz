@@ -114,9 +114,9 @@ function printTextExceptOnIterations(...$numbers) {
 // "Fish" or 7 to be "Spam", we have to give them that option, while not blowing up existing functionality for the first
 // clients.
 
-printTextExceptOnIterations([3 => 'Fish', 7 => 'Spam', 20 => 'Milk?'], 58, 72);
+printTextWithSpecsExceptOnIterations([3 => 'Fish', 7 => 'Spam', 20 => 'Milk?'], 58, 72);
 
-function printTextExceptOnIterations(array $numberNames, ...$numbers) {
+function printTextWithSpecsExceptOnIterations(array $numberNames, ...$numbers) {
     //echo "numbers: " . print_r($numbers, true);
     for ($i = 1; $i <= 120; $i++) {
         if ($i % 2 == 0) {
