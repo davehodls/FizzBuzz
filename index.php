@@ -15,3 +15,17 @@ for ($i = 1; $i <= 120; $i++) {
     else echo "$i";
     echo "\n";
 }
+
+echo "// alternate way with less comparisons of i:\n";
+for ($i = 1; $i <= 120; $i++) {
+    $output = $i;
+    if ($i % 4 == 0) {
+        $output = 'ChiCken';
+        if ($i % 7 == 0) {
+            $output .= ' and SteAk';
+        }
+    } else if ($i % 7 == 0) {
+        $output = 'SteAk';
+    }
+    //echo "$output\n";
+}
