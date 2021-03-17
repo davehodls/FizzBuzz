@@ -29,3 +29,21 @@ for ($i = 1; $i <= 120; $i++) {
     }
     //echo "$output\n";
 }
+
+/*
+//echo "// super-genius way that may have an arithmetic way to only check modulus once for each number, and append strings as vars:\n";
+$chicken = 'ChiCken';
+$steak = 'SteAk';
+for ($i = 1; $i <= 120; $i++) {
+    $iMod4 = $i % 4;
+    $iMod7 = $i % 7;
+    $iMods = $iMod4 + $iMod7;
+    $iMod47 = $iMods ? $iMods % $i : 'D/0';
+    //echo "i $i mod 4 = $iMod4, mod 7 = $iMod7, iMods $iMods, iMod47 = $iMod47: ";
+    // there's maybe something to do with subtracting i from the added mods or something
+    // then run it through some modulus then check greater than / less than with something to determine whether to append vars
+    // but I'm not seeing a good enough pattern yet
+    //echo "shrug\n";
+    // ah well
+}
+*/
